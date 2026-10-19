@@ -50,3 +50,45 @@ date,dest,window,depart,return,price_usd,airline,via
 2026-10-19,AMS,d23-r01,2026-12-23,2027-01-01,1271.9,Air Canada Basic,nonstop
 2026-10-19,AMS,d23-r02,2026-12-23,2027-01-02,1734.9,Air Canada,nonstop
 2026-10-19,AMS,d23-r03,2026-12-23,2027-01-03,1584.9,Air Canada,nonstop
+2026-10-19,CUN,d23-r01,2026-12-23,2027-01-01,783.25,Flair/Air Canada,nonstop
+2026-10-19,CUN,d23-r02,2026-12-23,2027-01-02,944.2,Flair,nonstop
+2026-10-19,CUN,d23-r03,2026-12-23,2027-01-03,921.16,Porter (Transat-operated),nonstop
+2026-10-19,CUN,d24-r01,2026-12-24,2027-01-01,828.15,WestJet Ultrabasic/Air Canada,nonstop
+2026-10-19,CUN,d24-r02,2026-12-24,2027-01-02,1039.05,WestJet Ultrabasic/Flair,nonstop
+2026-10-19,CUN,d24-r03,2026-12-24,2027-01-03,1006.65,Porter (Transat-operated),nonstop
+2026-10-19,MEX,d23-r01,2026-12-23,2027-01-01,1156.53,Air Canada,nonstop
+2026-10-19,MEX,d23-r02,2026-12-23,2027-01-02,1471.53,Air Canada,nonstop
+2026-10-19,MEX,d23-r03,2026-12-23,2027-01-03,1306.97,Air Canada/Flair,nonstop
+2026-10-19,MEX,d24-r01,2026-12-24,2027-01-01,891.54,Flair,nonstop
+2026-10-19,MEX,d24-r02,2026-12-24,2027-01-02,1228.53,Air Canada,nonstop
+2026-10-19,MEX,d24-r03,2026-12-24,2027-01-03,991.3,Flair,nonstop
+2026-10-19,PUJ,d23-r01,2026-12-23,2027-01-01,1130.23,Flair/Air Canada,nonstop
+2026-10-19,PUJ,d23-r02,2026-12-23,2027-01-02,1034.73,Flair,nonstop
+2026-10-19,PUJ,d23-r03,2026-12-23,2027-01-03,1130.23,Flair/Air Canada,nonstop
+2026-10-19,PUJ,d24-r01,2026-12-24,2027-01-01,1027.1,Flair/Air Canada,nonstop
+2026-10-19,PUJ,d24-r02,2026-12-24,2027-01-02,963.6,Flair,nonstop
+2026-10-19,PUJ,d24-r03,2026-12-24,2027-01-03,1027.1,Flair/Air Canada,nonstop
+2026-10-19,MBJ,d23-r01,2026-12-23,2027-01-01,830.82,Flair,nonstop
+2026-10-19,MBJ,d23-r02,2026-12-23,2027-01-02,1209.05,Flair,nonstop
+2026-10-19,MBJ,d23-r03,2026-12-23,2027-01-03,1099.42,Flair,nonstop
+2026-10-19,MBJ,d24-r01,2026-12-24,2027-01-01,859.28,WestJet Ultrabasic/Flair,nonstop
+2026-10-19,MBJ,d24-r02,2026-12-24,2027-01-02,1249.2,WestJet Ultrabasic/Flair,nonstop
+2026-10-19,MBJ,d24-r03,2026-12-24,2027-01-03,1128.85,WestJet Ultrabasic,nonstop
+2026-10-19,LON,d23-r01,2026-12-23,2027-01-01,1153.8,Air Canada Basic (LHR),nonstop
+2026-10-19,LON,d23-r02,2026-12-23,2027-01-02,1355.07,Air Transat (LGW),nonstop
+2026-10-19,LON,d23-r03,2026-12-23,2027-01-03,1355.07,Air Transat (LGW),nonstop
+2026-10-19,LON,d24-r01,2026-12-24,2027-01-01,1070.8,Air Canada Basic (LHR),nonstop
+2026-10-19,LON,d24-r02,2026-12-24,2027-01-02,1288.3,Porter/Transat Basic (LGW),nonstop
+2026-10-19,LON,d24-r03,2026-12-24,2027-01-03,1288.3,Porter/Transat Basic (LGW),nonstop
+2026-10-19,DUB,d23-r01,2026-12-23,2027-01-01,1431.8,Air Canada,nonstop
+2026-10-19,DUB,d23-r02,2026-12-23,2027-01-02,1748.49,Aer Lingus,nonstop
+2026-10-19,DUB,d23-r03,2026-12-23,2027-01-03,1568.8,Air Canada,nonstop
+2026-10-19,LIS,d23-r01,2026-12-23,2027-01-01,1984.73,Air Canada/Air Transat,nonstop
+2026-10-19,LIS,d23-r02,2026-12-23,2027-01-02,1835.9,Air Canada,nonstop
+2026-10-19,LIS,d23-r03,2026-12-23,2027-01-03,1680.9,Air Canada,nonstop
+2026-10-19,PAR,d23-r01,2026-12-23,2027-01-01,1321.05,Air Canada Economy Light,nonstop
+2026-10-19,PAR,d23-r02,2026-12-23,2027-01-02,1368.87,Air Canada Economy Light,nonstop
+2026-10-19,PAR,d23-r03,2026-12-23,2027-01-03,1645.57,Air Canada,nonstop
+2026-10-19,AMS,d23-r01,2026-12-23,2027-01-01,1271.9,Air Canada Basic,nonstop
+2026-10-19,AMS,d23-r02,2026-12-23,2027-01-02,1735.9,Air Canada,nonstop
+2026-10-19,AMS,d23-r03,2026-12-23,2027-01-03,1572.8,KLM/Delta Basic,nonstop
