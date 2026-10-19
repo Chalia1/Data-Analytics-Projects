@@ -1,0 +1,81 @@
+{
+  "origin": "YYZ",
+  "currency": "USD",
+  "deal_threshold": 0.3,
+  "min_history_for_baseline": 7,
+  "windows": [
+    {
+      "name": "6wk",
+      "depart_offset_days": 45,
+      "trip_length_days": 7
+    },
+    {
+      "name": "3mo",
+      "depart_offset_days": 90,
+      "trip_length_days": 7
+    }
+  ],
+  "destinations": [
+    {
+      "code": "LIS",
+      "city": "Lisbon"
+    },
+    {
+      "code": "LHR",
+      "city": "London"
+    },
+    {
+      "code": "CDG",
+      "city": "Paris"
+    },
+    {
+      "code": "FCO",
+      "city": "Rome"
+    },
+    {
+      "code": "BCN",
+      "city": "Barcelona"
+    },
+    {
+      "code": "DUB",
+      "city": "Dublin"
+    },
+    {
+      "code": "NRT",
+      "city": "Tokyo"
+    },
+    {
+      "code": "MEX",
+      "city": "Mexico City"
+    },
+    {
+      "code": "CUN",
+      "city": "Cancun"
+    },
+    {
+      "code": "PUJ",
+      "city": "Punta Cana"
+    },
+    {
+      "code": "MBJ",
+      "city": "Montego Bay"
+    },
+    {
+      "code": "BOG",
+      "city": "Bogota"
+    },
+    {
+      "code": "LAX",
+      "city": "Los Angeles"
+    },
+    {
+      "code": "MIA",
+      "city": "Miami"
+    },
+    {
+      "code": "YVR",
+      "city": "Vancouver"
+    }
+  ],
+  "_note": "Baseline = median of our own observed prices per route+window. Routes with fewer than min_history_for_baseline observations are 'calibrating' and never alert. MIA results may come back as FLL (nearby airport)."
+}
