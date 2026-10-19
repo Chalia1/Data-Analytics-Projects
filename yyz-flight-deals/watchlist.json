@@ -1,81 +1,27 @@
 {
   "origin": "YYZ",
   "currency": "USD",
-  "deal_threshold": 0.3,
+  "deal_threshold": 0.30,
   "min_history_for_baseline": 7,
+  "exclude_us": true,
+  "results_per_search": 5,
   "windows": [
-    {
-      "name": "6wk",
-      "depart_offset_days": 45,
-      "trip_length_days": 7
-    },
-    {
-      "name": "3mo",
-      "depart_offset_days": 90,
-      "trip_length_days": 7
-    }
+    {"name": "xmas",       "depart": "2026-12-21", "return": "2027-01-04", "applies_to": "all"},
+    {"name": "xmas-early", "depart": "2026-12-19", "return": "2027-01-02", "applies_to": "priority"},
+    {"name": "xmas-late",  "depart": "2026-12-23", "return": "2027-01-06", "applies_to": "priority"}
   ],
+  "_note": "Baseline = median of our own observed prices per route+window. Routes with fewer than min_history_for_baseline observations are 'calibrating' and never alert. 'query' is what gets passed to Expedia as destination; city names include all metro airports.",
   "destinations": [
-    {
-      "code": "LIS",
-      "city": "Lisbon"
-    },
-    {
-      "code": "LHR",
-      "city": "London"
-    },
-    {
-      "code": "CDG",
-      "city": "Paris"
-    },
-    {
-      "code": "FCO",
-      "city": "Rome"
-    },
-    {
-      "code": "BCN",
-      "city": "Barcelona"
-    },
-    {
-      "code": "DUB",
-      "city": "Dublin"
-    },
-    {
-      "code": "NRT",
-      "city": "Tokyo"
-    },
-    {
-      "code": "MEX",
-      "city": "Mexico City"
-    },
-    {
-      "code": "CUN",
-      "city": "Cancun"
-    },
-    {
-      "code": "PUJ",
-      "city": "Punta Cana"
-    },
-    {
-      "code": "MBJ",
-      "city": "Montego Bay"
-    },
-    {
-      "code": "BOG",
-      "city": "Bogota"
-    },
-    {
-      "code": "LAX",
-      "city": "Los Angeles"
-    },
-    {
-      "code": "MIA",
-      "city": "Miami"
-    },
-    {
-      "code": "YVR",
-      "city": "Vancouver"
-    }
-  ],
-  "_note": "Baseline = median of our own observed prices per route+window. Routes with fewer than min_history_for_baseline observations are 'calibrating' and never alert. MIA results may come back as FLL (nearby airport)."
+    {"code": "CUN", "query": "CUN",                       "city": "Cancun",      "priority": true},
+    {"code": "MEX", "query": "Mexico City, Mexico",       "city": "Mexico City", "priority": true},
+    {"code": "LON", "query": "London, United Kingdom",    "city": "London",      "priority": true},
+    {"code": "MAN", "query": "MAN",                       "city": "Manchester"},
+    {"code": "DUB", "query": "DUB",                       "city": "Dublin"},
+    {"code": "LIS", "query": "LIS",                       "city": "Lisbon"},
+    {"code": "PAR", "query": "Paris, France",             "city": "Paris"},
+    {"code": "ROM", "query": "Rome, Italy",               "city": "Rome"},
+    {"code": "BCN", "query": "BCN",                       "city": "Barcelona"},
+    {"code": "MAD", "query": "MAD",                       "city": "Madrid"},
+    {"code": "AMS", "query": "AMS",                       "city": "Amsterdam"}
+  ]
 }

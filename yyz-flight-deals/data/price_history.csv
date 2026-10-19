@@ -1,16 +1,10 @@
-date,dest,window,depart,return,price_usd,airline,stops
-2026-10-19,LIS,6wk,2026-12-03,2026-12-10,434.0,TAP Portugal,0
-2026-10-19,LHR,6wk,2026-12-03,2026-12-10,645.5,Virgin Atlantic,1
-2026-10-19,CDG,6wk,2026-12-03,2026-12-10,491.81,Air Transat,1
-2026-10-19,FCO,6wk,2026-12-03,2026-12-10,547.8,Delta/Air France,1
-2026-10-19,BCN,6wk,2026-12-03,2026-12-10,534.2,TAP Portugal,1
-2026-10-19,DUB,6wk,2026-12-03,2026-12-10,529.49,Air Canada,1
-2026-10-19,NRT,6wk,2026-12-03,2026-12-10,843.58,American Airlines,1
-2026-10-19,MEX,6wk,2026-12-03,2026-12-10,372.97,Flair/Arajet,1
-2026-10-19,CUN,6wk,2026-12-03,2026-12-10,327.5,Flair Airlines,0
-2026-10-19,PUJ,6wk,2026-12-03,2026-12-10,382.74,Air Canada/Arajet,0
-2026-10-19,MBJ,6wk,2026-12-03,2026-12-10,483.19,Porter/WestJet,0
-2026-10-19,BOG,6wk,2026-12-03,2026-12-10,569.78,Delta,1
-2026-10-19,LAX,6wk,2026-12-03,2026-12-10,423.84,Porter Airlines,0
-2026-10-19,MIA,6wk,2026-12-03,2026-12-10,206.5,Flair Airlines (FLL),0
-2026-10-19,YVR,6wk,2026-12-03,2026-12-10,216.11,Flair Airlines,0
+date,dest,window,depart,return,price_usd,airline,via
+2026-10-19,CUN,xmas,2026-12-21,2027-01-04,652.99,Flair Airlines,nonstop
+2026-10-19,MEX,xmas,2026-12-21,2027-01-04,1450.53,Air Canada,nonstop
+2026-10-19,LON,xmas,2026-12-21,2027-01-04,1274.8,Air Canada,nonstop
+2026-10-19,MAN,xmas,2026-12-21,2027-01-04,1378.1,Air Canada,nonstop
+2026-10-19,DUB,xmas,2026-12-21,2027-01-04,1323.4,Icelandair,KEF
+2026-10-19,LIS,xmas,2026-12-21,2027-01-04,1466.54,Air Canada,nonstop
+2026-10-19,PAR,xmas,2026-12-21,2027-01-04,1354.8,Air Canada,nonstop
+2026-10-19,ROM,xmas,2026-12-21,2027-01-04,2078.61,Air Canada,nonstop
+2026-10-19,AMS,xmas,2026-12-21,2027-01-04,1614.37,KLM,nonstop
