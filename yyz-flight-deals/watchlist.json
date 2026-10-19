@@ -1,27 +1,69 @@
 {
   "origin": "YYZ",
   "currency": "USD",
-  "deal_threshold": 0.30,
+  "deal_threshold": 0.3,
   "min_history_for_baseline": 7,
   "exclude_us": true,
-  "results_per_search": 5,
+  "search_mode": "nonstop",
+  "results_per_search": 1,
   "windows": [
-    {"name": "xmas",       "depart": "2026-12-21", "return": "2027-01-04", "applies_to": "all"},
-    {"name": "xmas-early", "depart": "2026-12-19", "return": "2027-01-02", "applies_to": "priority"},
-    {"name": "xmas-late",  "depart": "2026-12-23", "return": "2027-01-06", "applies_to": "priority"}
+    {
+      "name": "d23-r01",
+      "depart": "2026-12-23",
+      "return": "2027-01-01"
+    },
+    {
+      "name": "d23-r02",
+      "depart": "2026-12-23",
+      "return": "2027-01-02"
+    },
+    {
+      "name": "d23-r03",
+      "depart": "2026-12-23",
+      "return": "2027-01-03"
+    },
+    {
+      "name": "d24-r01",
+      "depart": "2026-12-24",
+      "return": "2027-01-01"
+    },
+    {
+      "name": "d24-r02",
+      "depart": "2026-12-24",
+      "return": "2027-01-02"
+    },
+    {
+      "name": "d24-r03",
+      "depart": "2026-12-24",
+      "return": "2027-01-03"
+    }
   ],
-  "_note": "Baseline = median of our own observed prices per route+window. Routes with fewer than min_history_for_baseline observations are 'calibrating' and never alert. 'query' is what gets passed to Expedia as destination; city names include all metro airports.",
+  "_note": "Xmas getaway: out Dec 23/24, back Jan 1/2/3. Nonstop-only searches (non-US by construction). Baseline = median of our own observed prices per route+window; routes with fewer than min_history_for_baseline observations are calibrating and never alert.",
   "destinations": [
-    {"code": "CUN", "query": "CUN",                       "city": "Cancun",      "priority": true},
-    {"code": "MEX", "query": "Mexico City, Mexico",       "city": "Mexico City", "priority": true},
-    {"code": "LON", "query": "London, United Kingdom",    "city": "London",      "priority": true},
-    {"code": "MAN", "query": "MAN",                       "city": "Manchester"},
-    {"code": "DUB", "query": "DUB",                       "city": "Dublin"},
-    {"code": "LIS", "query": "LIS",                       "city": "Lisbon"},
-    {"code": "PAR", "query": "Paris, France",             "city": "Paris"},
-    {"code": "ROM", "query": "Rome, Italy",               "city": "Rome"},
-    {"code": "BCN", "query": "BCN",                       "city": "Barcelona"},
-    {"code": "MAD", "query": "MAD",                       "city": "Madrid"},
-    {"code": "AMS", "query": "AMS",                       "city": "Amsterdam"}
+    {
+      "code": "CUN",
+      "query": "CUN",
+      "city": "Cancun"
+    },
+    {
+      "code": "MEX",
+      "query": "Mexico City, Mexico",
+      "city": "Mexico City"
+    },
+    {
+      "code": "PUJ",
+      "query": "PUJ",
+      "city": "Punta Cana"
+    },
+    {
+      "code": "MBJ",
+      "query": "MBJ",
+      "city": "Montego Bay"
+    },
+    {
+      "code": "LON",
+      "query": "London, United Kingdom",
+      "city": "London"
+    }
   ]
 }
