@@ -1,0 +1,69 @@
+{
+  "origin": "YYZ",
+  "currency": "USD",
+  "deal_threshold": 0.3,
+  "min_history_for_baseline": 7,
+  "exclude_us": true,
+  "search_mode": "nonstop",
+  "results_per_search": 1,
+  "windows": [
+    {
+      "name": "d23-r01",
+      "depart": "2026-12-23",
+      "return": "2027-01-01"
+    },
+    {
+      "name": "d23-r02",
+      "depart": "2026-12-23",
+      "return": "2027-01-02"
+    },
+    {
+      "name": "d23-r03",
+      "depart": "2026-12-23",
+      "return": "2027-01-03"
+    },
+    {
+      "name": "d24-r01",
+      "depart": "2026-12-24",
+      "return": "2027-01-01"
+    },
+    {
+      "name": "d24-r02",
+      "depart": "2026-12-24",
+      "return": "2027-01-02"
+    },
+    {
+      "name": "d24-r03",
+      "depart": "2026-12-24",
+      "return": "2027-01-03"
+    }
+  ],
+  "_note": "Xmas getaway: out Dec 23/24, back Jan 1/2/3. Nonstop-only searches (non-US by construction). Baseline = median of our own observed prices per route+window; routes with fewer than min_history_for_baseline observations are calibrating and never alert.",
+  "destinations": [
+    {
+      "code": "CUN",
+      "query": "CUN",
+      "city": "Cancun"
+    },
+    {
+      "code": "MEX",
+      "query": "Mexico City, Mexico",
+      "city": "Mexico City"
+    },
+    {
+      "code": "PUJ",
+      "query": "PUJ",
+      "city": "Punta Cana"
+    },
+    {
+      "code": "MBJ",
+      "query": "MBJ",
+      "city": "Montego Bay"
+    },
+    {
+      "code": "LON",
+      "query": "London, United Kingdom",
+      "city": "London"
+    }
+  ]
+}
