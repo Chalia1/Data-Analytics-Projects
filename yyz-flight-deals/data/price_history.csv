@@ -38,3 +38,15 @@ date,dest,window,depart,return,price_usd,airline,via
 2026-10-19,LON,d24-r01,2026-12-24,2027-01-01,1073.8,Air Canada (LHR),nonstop
 2026-10-19,LON,d24-r02,2026-12-24,2027-01-02,1288.3,Porter/Transat (LGW),nonstop
 2026-10-19,LON,d24-r03,2026-12-24,2027-01-03,1288.3,Porter/Transat (LGW),nonstop
+2026-10-19,DUB,d23-r01,2026-12-23,2027-01-01,1431.8,Air Canada,nonstop
+2026-10-19,DUB,d23-r02,2026-12-23,2027-01-02,1748.49,Aer Lingus,nonstop
+2026-10-19,DUB,d23-r03,2026-12-23,2027-01-03,1567.8,Air Canada,nonstop
+2026-10-19,LIS,d23-r01,2026-12-23,2027-01-01,1984.73,Air Canada/Air Transat,nonstop
+2026-10-19,LIS,d23-r02,2026-12-23,2027-01-02,1835.9,Air Canada,nonstop
+2026-10-19,LIS,d23-r03,2026-12-23,2027-01-03,1680.9,Air Canada,nonstop
+2026-10-19,PAR,d23-r01,2026-12-23,2027-01-01,1321.05,"Air Canada (Lufthansa-sold, Economy Light)",nonstop
+2026-10-19,PAR,d23-r02,2026-12-23,2027-01-02,1368.87,"Air Canada (Lufthansa-sold, Economy Light)",nonstop
+2026-10-19,PAR,d23-r03,2026-12-23,2027-01-03,1645.57,Air Canada (Lufthansa-sold),nonstop
+2026-10-19,AMS,d23-r01,2026-12-23,2027-01-01,1271.9,Air Canada Basic,nonstop
+2026-10-19,AMS,d23-r02,2026-12-23,2027-01-02,1734.9,Air Canada,nonstop
+2026-10-19,AMS,d23-r03,2026-12-23,2027-01-03,1584.9,Air Canada,nonstop

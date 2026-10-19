@@ -38,7 +38,7 @@
       "return": "2027-01-03"
     }
   ],
-  "_note": "Xmas getaway: out Dec 23/24, back Jan 1/2/3. Nonstop-only searches (non-US by construction). Baseline = median of our own observed prices per route+window; routes with fewer than min_history_for_baseline observations are calibrating and never alert.",
+  "_note": "Xmas getaway: out Dec 23/24, back Jan 1/2/3. Nonstop-only searches (non-US by construction). Baseline = median of our own observed prices per route+window; routes with fewer than min_history_for_baseline observations are calibrating and never alert. A destination with a 'windows' list is searched only on those windows (Europe: Dec 23 departures only, since Dec 24 flights land on Christmas Day).",
   "destinations": [
     {
       "code": "CUN",
@@ -64,6 +64,56 @@
       "code": "LON",
       "query": "London, United Kingdom",
       "city": "London"
+    },
+    {
+      "code": "DUB",
+      "query": "DUB",
+      "city": "Dublin",
+      "windows": [
+        "d23-r01",
+        "d23-r02",
+        "d23-r03"
+      ]
+    },
+    {
+      "code": "LIS",
+      "query": "LIS",
+      "city": "Lisbon",
+      "windows": [
+        "d23-r01",
+        "d23-r02",
+        "d23-r03"
+      ]
+    },
+    {
+      "code": "PAR",
+      "query": "Paris, France",
+      "city": "Paris",
+      "windows": [
+        "d23-r01",
+        "d23-r02",
+        "d23-r03"
+      ]
+    },
+    {
+      "code": "ROM",
+      "query": "Rome, Italy",
+      "city": "Rome",
+      "windows": [
+        "d23-r01",
+        "d23-r02",
+        "d23-r03"
+      ]
+    },
+    {
+      "code": "AMS",
+      "query": "AMS",
+      "city": "Amsterdam",
+      "windows": [
+        "d23-r01",
+        "d23-r02",
+        "d23-r03"
+      ]
     }
   ]
 }

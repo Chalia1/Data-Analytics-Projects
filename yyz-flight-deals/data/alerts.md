@@ -54,3 +54,23 @@ No non-US option in results: BCN/xmas, MAD/xmas
 - LON d23-r03: $1355 · Air Transat (LGW) · via nonstop
 - MEX d23-r02: $1463 · Air Canada · via nonstop
 
+## 2026-10-19
+12/12 route-windows still calibrating (need 7 days of history).
+### Deals (30%+ below baseline)
+- none
+### New lows
+- none
+### Today's cheapest (no US connections)
+- AMS d23-r01: $1272 · Air Canada Basic · via nonstop
+- PAR d23-r01: $1321 · Air Canada (Lufthansa-sold, Economy Light) · via nonstop
+- PAR d23-r02: $1369 · Air Canada (Lufthansa-sold, Economy Light) · via nonstop
+- DUB d23-r01: $1432 · Air Canada · via nonstop
+- DUB d23-r03: $1568 · Air Canada · via nonstop
+- AMS d23-r03: $1585 · Air Canada · via nonstop
+- PAR d23-r03: $1646 · Air Canada (Lufthansa-sold) · via nonstop
+- LIS d23-r03: $1681 · Air Canada · via nonstop
+- AMS d23-r02: $1735 · Air Canada · via nonstop
+- DUB d23-r02: $1748 · Aer Lingus · via nonstop
+- LIS d23-r02: $1836 · Air Canada · via nonstop
+- LIS d23-r01: $1985 · Air Canada/Air Transat · via nonstop
+
