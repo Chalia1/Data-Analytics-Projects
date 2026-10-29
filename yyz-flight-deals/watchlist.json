@@ -38,7 +38,7 @@
       "return": "2027-01-03"
     }
   ],
-  "_note": "Xmas getaway: out Dec 23/24, back Jan 1/2/3. Nonstop-only searches (non-US by construction). Baseline = median of our own observed prices per route+window; routes with fewer than min_history_for_baseline observations are calibrating and never alert. A destination with a 'windows' list is searched only on those windows (Europe: Dec 23 departures only, since Dec 24 flights land on Christmas Day).",
+  "_note": "Xmas getaway: out Dec 23/24, back Jan 1/2/3. Nonstop-only searches (non-US by construction). Baseline = median of our own observed prices per route+window; routes with fewer than min_history_for_baseline observations are calibrating and never alert. A destination with a 'windows' list is searched only on those windows (Europe: Dec 23 departures only, since Dec 24 flights land on Christmas Day). A destination with 'max_stops' (Rome, Toulouse: no nonstop from YYZ) is searched with that many stops and up to 10 results, recording every connection airport in 'via' so the checker can drop US connections.",
   "destinations": [
     {
       "code": "CUN",
@@ -99,6 +99,18 @@
       "code": "ROM",
       "query": "Rome, Italy",
       "city": "Rome",
+      "max_stops": 1,
+      "windows": [
+        "d23-r01",
+        "d23-r02",
+        "d23-r03"
+      ]
+    },
+    {
+      "code": "TLS",
+      "query": "TLS",
+      "city": "Toulouse",
+      "max_stops": 1,
       "windows": [
         "d23-r01",
         "d23-r02",
