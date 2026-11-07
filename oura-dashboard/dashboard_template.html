@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Ring Data</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #14171c; --muted: #5d6673; --line: #e3e6eb;
+    --c1: #3b6fd8; --c2: #1f9e78; --c3: #d9822b; --c4: #8a5cd1; --warn-bg: #fff4e0; --warn-ink: #8a4b00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1216; --card: #171b21; --ink: #e8ebef; --muted: #98a2b0; --line: #2a3039;
+      --c1: #6f9cf0; --c2: #41c39b; --c3: #f0a552; --c4: #b08cf0; --warn-bg: #3a2a10; --warn-ink: #ffcf8a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1120px; margin: 0 auto; padding: 24px 16px 48px; }
+  header { display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline; justify-content: space-between; }
+  h1 { font-size: 22px; margin: 0; }
+  .sub { color: var(--muted); font-size: 13px; }
+  .ranges button { border: 1px solid var(--line); background: var(--card); color: var(--ink);
+                   padding: 5px 11px; border-radius: 6px; cursor: pointer; font: inherit; font-size: 13px; }
+  .ranges button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .warn { background: var(--warn-bg); color: var(--warn-ink); padding: 10px 14px; border-radius: 8px;
+          margin: 16px 0 0; font-size: 14px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .kpi .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  .kpi .value { font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .kpi .delta { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; min-width: 0; }
+  .card h2 { font-size: 14px; margin: 0 0 8px; font-weight: 600; }
+  .chart { position: relative; height: 240px; }
+  footer { margin-top: 24px; color: var(--muted); font-size: 12px; }
+  .empty { padding: 40px; text-align: center; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>My Ring Data</h1>
+      <div class="sub" id="meta"></div>
+    </div>
+    <div class="ranges" id="ranges">
+      <button data-d="30">30d</button><button data-d="90" aria-pressed="true">90d</button>
+      <button data-d="365">1y</button><button data-d="0">All</button>
+    </div>
+  </header>
+  <div id="warn"></div>
+  <section class="kpis" id="kpis"></section>
+  <section class="grid">
+    <div class="card"><h2>Scores</h2><div class="chart"><canvas id="scores"></canvas></div></div>
+    <div class="card"><h2>HRV (ms) and lowest heart rate (bpm)</h2><div class="chart"><canvas id="hrv"></canvas></div></div>
+    <div class="card"><h2>Sleep stages (hours)</h2><div class="chart"><canvas id="stages"></canvas></div></div>
+    <div class="card"><h2>Steps</h2><div class="chart"><canvas id="steps"></canvas></div></div>
+    <div class="card"><h2>Temperature deviation (°C)</h2><div class="chart"><canvas id="temp"></canvas></div></div>
+    <div class="card"><h2>Daytime stress vs recovery (minutes)</h2><div class="chart"><canvas id="stress"></canvas></div></div>
+  </section>
+  <footer id="foot"></footer>
+</main>
+<script>
+const DATA = /*__DATA__*/null;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const charts = {};
+let range = 90;
+
+function avg(xs) { const v = xs.filter(x => x != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; }
+function fmt(v, d = 0) { return v == null ? "–" : Number(v).toLocaleString(undefined, { maximumFractionDigits: d, minimumFractionDigits: d }); }
+
+function render() {
+  const all = DATA.series;
+  const rows = range ? all.slice(-range) : all;
+  const labels = rows.map(r => r.day);
+  const col = k => rows.map(r => r[k] ?? null);
+
+  // Freshness: the API only has what the app last uploaded.
+  const last = all.length ? all[all.length - 1].day : null;
+  const ageDays = last ? Math.floor((Date.now() - new Date(last + "T12:00:00")) / 864e5) : null;
+  document.getElementById("warn").innerHTML = ageDays != null && ageDays > 1
+    ? `<div class="warn">Newest data is from ${last} (${ageDays} days ago). The ring only reaches the cloud through the Oura app, so this stops updating once the app stops syncing.</div>` : "";
+  document.getElementById("meta").textContent = last ? `${all.length} days · ${all[0].day} → ${last}` : "No data yet";
+
+  // KPIs: latest value vs average of the previous 7 days.
+  const kp = [["sleep_score", "Sleep", 0], ["readiness_score", "Readiness", 0], ["activity_score", "Activity", 0],
+              ["hrv", "HRV ms", 0], ["lowest_hr", "Lowest HR", 0], ["total_sleep_h", "Sleep hrs", 1], ["steps", "Steps", 0]];
+  document.getElementById("kpis").innerHTML = kp.map(([k, label, d]) => {
+    let i = all.length - 1; while (i >= 0 && all[i][k] == null) i--;
+    if (i < 0) return "";
+    const v = all[i][k], base = avg(all.slice(Math.max(0, i - 7), i).map(r => r[k]));
+    const diff = base == null ? "" : `${v - base >= 0 ? "+" : "−"}${fmt(Math.abs(v - base), d)} vs prior 7-day avg`;
+    return `<div class="kpi"><div class="label">${label}</div><div class="value">${fmt(v, d)}</div><div class="delta">${all[i].day} · ${diff}</div></div>`;
+  }).join("");
+
+  const grid = css("--line"), ink = css("--muted");
+  const base = (extra = {}) => ({
+    responsive: true, maintainAspectRatio: false, animation: false, interaction: { mode: "index", intersect: false },
+    plugins: { legend: { labels: { color: ink, boxWidth: 12 } } },
+    scales: { x: { ticks: { color: ink, maxTicksLimit: 8 }, grid: { display: false } },
+              y: { ticks: { color: ink }, grid: { color: grid } } },
+    elements: { point: { radius: 0, hitRadius: 6 }, line: { tension: .25, borderWidth: 2 } }, spanGaps: true, ...extra,
+  });
+  const line = (label, data, color, axis = "y") => ({ label, data, borderColor: color, backgroundColor: color, yAxisID: axis });
+  const draw = (id, cfg) => { charts[id]?.destroy(); charts[id] = new Chart(document.getElementById(id), cfg); };
+
+  draw("scores", { type: "line", data: { labels, datasets: [
+    line("Sleep", col("sleep_score"), css("--c1")), line("Readiness", col("readiness_score"), css("--c2")),
+    line("Activity", col("activity_score"), css("--c3"))] }, options: base() });
+
+  const o = base(); o.scales.y2 = { position: "right", ticks: { color: ink }, grid: { display: false } };
+  draw("hrv", { type: "line", data: { labels, datasets: [
+    line("HRV", col("hrv"), css("--c4")), line("Lowest HR", col("lowest_hr"), css("--c3"), "y2")] }, options: o });
+
+  const st = base(); st.scales.x.stacked = st.scales.y.stacked = true;
+  draw("stages", { type: "bar", data: { labels, datasets: [
+    { label: "Deep", data: col("deep_h"), backgroundColor: css("--c1") },
+    { label: "REM", data: col("rem_h"), backgroundColor: css("--c4") },
+    { label: "Light", data: col("light_h"), backgroundColor: css("--c2") }] }, options: st });
+
+  draw("steps", { type: "bar", data: { labels, datasets: [
+    { label: "Steps", data: col("steps"), backgroundColor: css("--c3") }] }, options: base({ plugins: { legend: { display: false } } }) });
+
+  draw("temp", { type: "line", data: { labels, datasets: [line("Deviation", col("temp_dev"), css("--c3"))] },
+    options: base({ plugins: { legend: { display: false } } }) });
+
+  draw("stress", { type: "bar", data: { labels, datasets: [
+    { label: "Stress", data: col("stress_min"), backgroundColor: css("--c3") },
+    { label: "Recovery", data: col("recovery_min"), backgroundColor: css("--c2") }] }, options: base() });
+
+  document.getElementById("foot").textContent =
+    `Generated ${DATA.generated} from your local database. Records: ` +
+    Object.entries(DATA.counts).map(([k, v]) => `${k} ${v}`).join(", ");
+}
+
+document.getElementById("ranges").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  range = +b.dataset.d;
+  document.querySelectorAll("#ranges button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  render();
+});
+
+if (!DATA || !DATA.series.length) {
+  document.querySelector("main").innerHTML = '<div class="empty">No data yet. Run <code>python oura.py sync</code> or <code>python oura.py import &lt;export&gt;</code>, then <code>python oura.py dashboard</code>.</div>';
+} else {
+  render();
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
+}
+</script>
+</body>
+</html>
