@@ -2171,3 +2171,58 @@ No non-US option in results: ROM/d23-r01, ROM/d23-r03
 - ROM d23-r02: $2704 · Air Canada · via MUC
 - LIS d23-r01: $3046 · TAP Portugal · via nonstop
 
+## 2026-11-25
+### Deals (30%+ below baseline)
+- none
+### New lows
+- YYZ→MEX (Mexico City) d24-r03 2026-12-24→2027-01-03: $896 · Flair Airlines · via nonstop (previous low $935)
+### Today's cheapest (no US connections)
+- CUN d23-r01: $726 · Flair Airlines · via nonstop
+- CUN d24-r01: $757 · Flair Airlines · via nonstop
+- PUJ d23-r01: $762 · Flair Airlines · via nonstop
+- PUJ d23-r02: $762 · Flair Airlines · via nonstop
+- PUJ d24-r01: $797 · Flair Airlines · via nonstop
+- PUJ d24-r02: $797 · Flair Airlines · via nonstop
+- CUN d23-r03: $824 · Flair Airlines · via nonstop
+- MBJ d24-r02: $839 · Flair Airlines · via nonstop
+- CUN d24-r03: $855 · Flair Airlines · via nonstop
+- MEX d24-r03: $896 · Flair Airlines · via nonstop
+- PUJ d23-r03: $906 · Flair Airlines · via nonstop
+- MBJ d23-r02: $913 · Flair Airlines · via nonstop
+- PUJ d24-r03: $941 · Flair Airlines · via nonstop
+- MBJ d24-r01: $998 · Flair Airlines · via nonstop
+- MBJ d24-r03: $998 · Flair Airlines · via nonstop
+- MBJ d23-r01: $1073 · Flair Airlines · via nonstop
+- MBJ d23-r03: $1073 · Flair Airlines · via nonstop
+- MEX d24-r01: $1091 · Aeromexico · via nonstop
+- CUN d23-r02: $1107 · Flair Airlines · via nonstop
+- CUN d24-r02: $1138 · Flair Airlines · via nonstop
+- LON d24-r01: $1247 · Porter Airlines · via nonstop
+- LON d23-r01: $1343 · Air Transat · via nonstop
+- MEX d23-r01: $1410 · Air Canada · via nonstop
+- MEX d24-r02: $1458 · Air Canada · via nonstop
+- LON d24-r02: $1472 · Air Transat · via nonstop
+- LON d24-r03: $1490 · Porter Airlines · via nonstop
+- LON d23-r02: $1549 · Air Transat · via nonstop
+- LON d23-r03: $1615 · Air Transat · via nonstop
+- AMS d23-r01: $1626 · KLM · via nonstop
+- PAR d23-r01: $1629 · Air Canada · via nonstop
+- PAR d23-r02: $1647 · Air France · via nonstop
+- DUB d23-r01: $1654 · Air Canada · via nonstop
+- MEX d23-r02: $1716 · Air Canada · via nonstop
+- TLS d23-r01: $1721 · Air France · via CDG AMS
+- AMS d23-r03: $1838 · KLM · via nonstop
+- PAR d23-r03: $1851 · Air France · via nonstop
+- ROM d23-r01: $1858 · Air Canada · via MUC FRA
+- TLS d23-r03: $1867 · Air France · via CDG CDG
+- AMS d23-r02: $1952 · KLM · via nonstop
+- TLS d23-r02: $1961 · Air France · via CDG CDG
+- DUB d23-r03: $1990 · Air Canada · via nonstop
+- MEX d23-r03: $2006 · Air Canada · via nonstop
+- ROM d23-r03: $2109 · Air Canada · via MUC DUB
+- DUB d23-r02: $2321 · Aer Lingus · via nonstop
+- LIS d23-r03: $2407 · Lufthansa · via nonstop
+- LIS d23-r02: $2792 · Lufthansa · via nonstop
+- LIS d23-r01: $3044 · TAP Portugal · via nonstop
+No non-US option in results: ROM/d23-r02
+
